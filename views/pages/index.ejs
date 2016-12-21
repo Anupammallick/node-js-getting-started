@@ -2,65 +2,202 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+     <title>Genesis</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="author" type="text/html" href="https://plus.google.com/+MuazKhan">
+    <meta name="author" content="Muaz Khan">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="//cdn.webrtc-experiment.com/style.css">
+
+    <style>
+    audio,
+    video {
+        -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;
+        vertical-align: top;
+    }
+    
+    input {
+        border: 1px solid #d9d9d9;
+        border-radius: 1px;
+        font-size: 2em;
+        margin: .2em;
+        width: 30%;
+    }
+    
+    .setup {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 102%;
+        height: 47px;
+        margin-left: -9px;
+        margin-top: 8px;
+        position: absolute;
+    }
+    
+    p {
+        padding: 1em;
+    }
+    
+    li {
+        border-bottom: 1px solid rgb(189, 189, 189);
+        border-left: 1px solid rgb(189, 189, 189);
+        padding: .5em;
+    }
+    
+    .video-container {
+        background: white;
+        border: 2px solid black;
+        border-radius: 0.2em;
+        display: inline-block;
+        margin: 2em .2em;
+        padding: .1em;
+        vertical-align: top;
+    }
+    
+    .video-container h2 {
+        border: 0;
+        border-top: 1px solid black;
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .takeSnapshot,
+    .takeSnapshot:hover,
+    .takeSnapshot:active {
+        background-color: transparent;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuM4zml1AAAAO1SURBVHhe7VpNixNBEN17focevewP3IMIgiDeBT2IoIgoIoJ40IMigoh48CQLwiZZkaCbZLNfCfG93pqme6Yyk5mepbPTPnhUp7pnmHrd1R8z2Voul0lTdaZE1ZkSVWdKVJ0pUXWmRNWZElVnSlSdKVF1rsEeeEW4syavbm9vb7VN3DeIqrOCvfF4/BG2FnDNV5jWRcA9g6g6K8heb4odLYgQ4p5BVJ0VTEYAN88tF4vFA9imuAdq80MIC8+4goynEGfBAfZOTk5uHh4e/kW5M5jNZlN03nUUPSHcwMnewcHBd9jOQkSwMXvBTyaTD7AWmLn3jo+Pn8vPTmA6nY5g7ChwBWCeWJydnT2CyeaBroExrRYA+f8GJlOpsQDIu1cwO7Cvzz3tQCbiykkQI/gzrAbWrxYAsA2kXBtIp/cwZuND27IIdjlFuYy9FSl88QJwsskeUh6UvdUW1hWA1J7/4gXAavINxo4ADMcfpqIdbL4ABILeRSrcgf0prlYgE3QmbhXjCXCRgKg8kK2zE7wG5kG/iS8LMh+obSDlruG/AKCJLwsyH2gUATCsfw2Hw6f7+/uPaQeDwTPsSSZS3SY2SwBZq5nPhRcm9LEuv00PxGYIgB7/AqMGnifbsC2uGcKGIr4Ask22gbMMUgyNXjuIwNdrIYgrgCxhXlA4pb01lQpQ9w7Ga4+UGJjKZognAF9MwOSD+W0qSwAR/sC413FkNEU8AU5PT2+4wWMCnJ3XVEPO8kYEWhkZTRBHAAnWBoDzwidTUQNyqszu0XQUxBGAa7vT+yFD2ByGYDkKOCrqIo4AueEfLADZ7/dfiK8O4ggA2AdHz90WXxPY+4xGo7viq4P4AvDVu/ia4HIK4L4lws9WUgDzyhPx1UEcAXjICRVADkd2JWm4NY4jgLsJom3yohTX3AoVEYgjgMAOX5TZg3vn7mrIVysrYMBHm3gCSMAmCEeEXVNZAjd4uS5kDoknAHF0dPQSxhOBy6KkiAfk/FiWTK99k12kg7gCEPP5/CGMDSoLDGTPuiy0gVA8SocgvgCE5LAXYBnZVo7SodgMAQgExG8GhZ52g2a9/GdhjHIbKBdAcjT442gdMP+xq7uPopcCECj07Y+GcgEIWaOT+jzOP0h4r5l4fhchOgOkEf/6o/5Bguxib3so+4sMaYb8OhuTywb2PN9HoGh7n3SDd5nl/jr0Jq0I1J5Joxd4xoIjNarOlKg6U6LqTImqMyWqzpSoOlOi6kyJqjMlqs6UqDrT4XLrH5iAs+/bwo6TAAAAAElFTkSuQmCC') !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        height: 44px;
+        margin: .2em;
+        position: absolute;
+        width: 63px;
+        z-index: 200;
+        border: 0;
+        cursor: pointer;
+    }
+    </style>
+	 <script src="//cdn.webrtc-experiment.com/firebase.js">
+    </script>
+    <script src="//cdn.webrtc-experiment.com/RTCMultiConnection.js">
+    </script>
+	
 </head>
 
 <body>
 
   <% include ../partials/nav.ejs %>
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Getting Started with Node on Heroku</h1>
-    <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started with Node</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started with Node on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
+            <section class="experiment">
+            <h2>New Session:</h2>
+            <button id="start-new-session">Start New Video Session</button>
+            <section id="snapshots-container"></section>
 
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/master/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started with Node on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
+            <table style="border-left: 1px solid black; width: 100%;">
+                <tr>
+                    <td id="local-video-container">
+                        <h2>Local video container</h2>
+                    </td>
+                    <td id="remote-videos-container" style="background: white; border-left: 1px solid black;">
+                        <h2>Remote videos container
+                        </h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table id="sessions-list" style="width: 100%;"></table>
+                    </td>
+                </tr>
+            </table>
+        </section>
 
+        <script>
+        // window.username = Math.random() * 9999 << 9999;
+        var connection = new RTCMultiConnection();
+        var sessionsList = document.getElementById('sessions-list');
+        connection.onNewSession = function(session) {
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + session.extra.username + '</td>';
+            var td = document.createElement('td');
+            var button = document.createElement('button');
+            button.innerHTML = 'join';
+            td.appendChild(button);
+            tr.appendChild(td);
+            sessionsList.insertBefore(tr, sessionsList.firstChild);
+            button.onclick = function() {
+                if (!window.username) window.username = prompt('Please enter your username') || 'Anonymous';
+                connection.extra = {
+                    username: window.username
+                };
+                session.join();
+                document.getElementById('start-new-session').disabled = true;
+                sessionsList.style.display = 'none';
+            };
+        };
+        // check if user is ejected
+        // clear rooms-list if user is ejected
+        connection.onSessionClosed = function(event) {
+            if (event.isEjected) {
+                sessionsList.innerHTML = '';
+                sessionsList.style.display = 'block';
+            }
+        };
+        document.getElementById('start-new-session').onclick = function() {
+            if (!window.username) window.username = prompt('Please enter your username') || 'Anonymous';
+            connection.extra = {
+                username: window.username
+            };
+            connection.sessionid = window.username;
+            connection.open();
+            document.getElementById('start-new-session').disabled = true;
+            sessionsList.style.display = 'none';
+        };
+        connection.onstream = function(stream) {
+            var div = document.createElement('div');
+            div.className = 'video-container';
+            div.id = stream.streamid || 'self';
+            var takeSnapshot = document.createElement('button');
+            takeSnapshot.className = 'takeSnapshot';
+            takeSnapshot.title = 'Take snapshot of this video';
+            takeSnapshot.onclick = function() {
+                // http://www.rtcmulticonnection.org/docs/takeSnapshot/
+                connection.streams[this.parentNode.id].takeSnapshot(function(snapshot) {
+                    var image = new Image();
+                    image.src = snapshot;
+                    snapshotsContainer.appendChild(image);
+                });
+            };
+            div.appendChild(takeSnapshot);
+            div.appendChild(stream.mediaElement);
+            if (stream.type === 'local') {
+                document.getElementById('local-video-container').appendChild(div);
+            }
+            if (stream.type === 'remote') {
+                var remoteVideosContainer = document.getElementById('remote-videos-container');
+                remoteVideosContainer.appendChild(div, remoteVideosContainer.firstChild);
+            }
+            stream.mediaElement.width = innerWidth / 3.4;
+        };
+        connection.onstreamended = function(e) {
+            if (e.mediaElement && e.mediaElement.parentNode && e.mediaElement.parentNode.parentNode) {
+                e.mediaElement.parentNode.parentNode.removeChild(e.mediaElement.parentNode);
+            }
+        };
+        var snapshotsContainer = document.getElementById('snapshots-container');
+        connection.connect();
+        </script>
 
+        
+    <!-- commits.js is useless for you! -->
+    <script src="//cdn.webrtc-experiment.com/commits.js" async>
+    </script>
 </body>
 </html>
